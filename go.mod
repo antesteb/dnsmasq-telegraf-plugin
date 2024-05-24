@@ -1,4 +1,4 @@
-module github.com/machinly/dnsmasq-telegraf-plugin
+module github.com/hlepesant/dnsmasq-telegraf-plugin
 
 go 1.16
 

@@ -14,7 +14,7 @@ dig +short chaos txt cachesize.bind
 
 Download the repo somewhere
 
-    $ git clone git@github.com:machinly/dnsmasq-telegraf-plugin.git dnsmasq-tp
+    $ git clone git@github.com:hlepesant/dnsmasq-telegraf-plugin.git dnsmasq-tp
 
 build the "dnsmasq-tp" binary
 

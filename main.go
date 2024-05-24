@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	_ "github.com/machinly/dnsmasq-telegraf-plugin/plugins/inputs/dnsmasq"
+	_ "github.com/hlepesant/dnsmasq-telegraf-plugin/plugins/inputs/dnsmasq"
 
 	"github.com/influxdata/telegraf/plugins/common/shim"
 )
