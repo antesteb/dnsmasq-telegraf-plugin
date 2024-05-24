@@ -2,6 +2,7 @@
 
 > :warning: Use the original repo : [https://github.com/machinly/dnsmasq-telegraf-plugin](dnsmasq-telegraf-plugin)
 
+
 This is a dnsmasq statistics input plugin for Telegraf, meant to be compiled separately and used externally with telegraf's execd input plugin. 
 
 See "cache statistics" section in [https://manpages.debian.org/stretch/dnsmasq-base/dnsmasq.8.en.html#NOTES](https://manpages.debian.org/stretch/dnsmasq-base/dnsmasq.8.en.html#NOTES)
