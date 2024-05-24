@@ -3,7 +3,7 @@ HOSTNAME=github.com
 NAMESPACE=hlepesant
 BINARY=dnsmasq-telegraf-execd
 PLUGIN=dnsmasq-telegraf-plugin
-VERSION=0.0.2
+VERSION=0.0.3
 # OS_ARCH=linux_amd64 #darwin_amd64
 
 default: build
