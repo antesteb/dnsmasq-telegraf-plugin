@@ -40,6 +40,26 @@ func (d *Dnsmasq) Description() string {
 }
 
 func (d *Dnsmasq) Gather(acc telegraf.Accumulator) error {
+	questionBinds := []string{
+		"cachesize.bind.",
+		"insertions.bind.",
+		"evictions.bind.",
+		"misses.bind.",
+		"hits.bind.",
+		"auth.bind.",
+		"servers.bind.",
+	}
+	for _, questionBind := range questionBinds {
+		err := queryDnsmasq(questionBind, d, acc)
+
+		if err != nil {
+			return err
+		}
+	}
+  return nil
+}
+
+func queryDnsmasq(questionBind string, d *Dnsmasq, acc telegraf.Accumulator) error {
 	d.setDefaultValues()
 	fields := make(map[string]interface{}, 2)
 	tags := map[string]string{
@@ -51,13 +71,7 @@ func (d *Dnsmasq) Gather(acc telegraf.Accumulator) error {
 			RecursionDesired: true,
 		},
 		Question: []dns.Question{
-			question("cachesize.bind."),
-			question("insertions.bind."),
-			question("evictions.bind."),
-			question("misses.bind."),
-			question("hits.bind."),
-			question("auth.bind."),
-			question("servers.bind."),
+			question(questionBind),
 		},
 	}
 	in, _, err := d.c.Exchange(msg, d.Server)
